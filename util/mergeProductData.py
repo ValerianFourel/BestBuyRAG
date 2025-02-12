@@ -3,7 +3,7 @@ import glob
 import os
 
 # Get all CSV files that start with 'products_data'
-csv_files = glob.glob('../dataLakeBestBuy/products_data*.csv')
+csv_files = glob.glob('../dataBestBuy/dataLakeBestBuy/products_data*.csv')
 
 # Print the files found to debug
 print(f"Found files: {csv_files}")
@@ -38,5 +38,5 @@ print(f"Shape after removing duplicates: {merged_df.shape}")
 os.makedirs('../datawarehouse', exist_ok=True)
 
 # Save as parquet in datawarehouse folder
-merged_df.to_parquet('../datawarehouse/products_data_All.parquet')
+merged_df.to_parquet('../dataBestBuy/datawarehouse/products_data_All.parquet')
 print("Successfully saved as parquet file")

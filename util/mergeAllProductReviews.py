@@ -3,7 +3,7 @@ import glob
 import os
 
 # Get all CSV files that start with 'all_products'
-csv_files = glob.glob('../dataLakeBestBuy/all_products*.csv')
+csv_files = glob.glob('../dataBestBuy/dataLakeBestBuy/all_products*.csv')
 
 # Create empty list to store dataframes
 dfs = []
@@ -31,5 +31,5 @@ print(f"Final merged shape: {merged_df.shape}")
 os.makedirs('../datawarehouse', exist_ok=True)
 
 # Save as parquet in datawarehouse folder
-merged_df.to_parquet('../datawarehouse/merged_products_reviews_All.parquet')
+merged_df.to_parquet('../dataBestBuy/datawarehouse/merged_products_reviews_All.parquet')
 print("Successfully saved as parquet file")
